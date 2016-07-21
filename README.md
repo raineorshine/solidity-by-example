@@ -12,3 +12,4 @@ This is a collection of Solidity snippets for people who like to learn by exampl
 - [public-mapping.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/public-mapping/public-mapping.sol)
 - [reentry-attack.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/reentry-attack/reentry-attack.sol)
 - [remove-from-array.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/remove-from-array/remove-from-array.sol)
+- [tuple.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/tuple/tuple.sol)
