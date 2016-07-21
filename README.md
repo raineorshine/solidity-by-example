@@ -6,6 +6,7 @@ This is a collection of Solidity snippets for people who like to learn by exampl
 - [array-passing.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/array-passing/array-passing.sol)
 - [call-other-contract.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/call-other-contract/call-other-contract.sol)
 - [error-trap.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/error-trap/error-trap.sol)
+- [f.value.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/f.value/f.value.sol)
 - [factory.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/factory/factory.sol)
 - [mapping-delete.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/mapping-delete/mapping-delete.sol)
 - [public-length.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/public-length/public-length.sol)
