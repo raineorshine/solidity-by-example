@@ -10,6 +10,7 @@ This is a collection of Solidity snippets for people who like to learn by exampl
 - [factory.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/factory/factory.sol)
 - [mapping-delete.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/mapping-delete/mapping-delete.sol)
 - [modifiers.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/modifiers/modifiers.sol)
+- [no-variable-length-returns.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/no-variable-length-returns/no-variable-length-returns.sol)
 - [public-length.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/public-length/public-length.sol)
 - [public-mapping.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/public-mapping/public-mapping.sol)
 - [reentry-attack.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/reentry-attack/reentry-attack.sol)
