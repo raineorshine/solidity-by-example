@@ -3,6 +3,7 @@ This is a collection of Solidity snippets for people who like to learn by exampl
 ### Examples
 
 - [array-delete.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/array-delete/array-delete.sol)
+- [array-of-strings.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/array-of-strings/array-of-strings.sol)
 - [array-passing.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/array-passing/array-passing.sol)
 - [call-other-contract.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/call-other-contract/call-other-contract.sol)
 - [error-trap.sol](https://github.com/raineorshine/solidity-by-example/blob/master/examples/error-trap/error-trap.sol)
