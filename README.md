@@ -1,8 +1,8 @@
 This is a collection of Solidity snippets for people who like to learn by example. Maybe some day it will turn into more of a step-by-step learning experience.
 
-### Examples
+## Examples
 
-## array-delete.sol
+### array-delete.sol
 ```js
 contract ArrayDelete {
     uint[] numbers;
@@ -19,9 +19,10 @@ contract ArrayDelete {
         // 100, 200, 0, 400, 500
         return numbers;
     }
-}```
+}
+```
 
-## array-of-strings.sol
+### array-of-strings.sol
 ```js
 contract MyContract {
     string[] strings;
@@ -34,9 +35,10 @@ contract MyContract {
     function bar() constant returns(string) {
         return strings[1];
     }
-}```
+}
+```
 
-## array-passing.sol
+### array-passing.sol
 ```js
 contract A {
     uint256[] public numbers;
@@ -60,9 +62,10 @@ contract Manager {
 
         return a.numbers(0);
     }
-}```
+}
+```
 
-## call-other-contract.sol
+### call-other-contract.sol
 ```js
 import 'OtherContract.sol'
 
@@ -74,9 +77,10 @@ contract MyContract {
   function foo() {
     other.bar();
   }
-}```
+}
+```
 
-## error-trap.sol
+### error-trap.sol
 ```js
 contract ContractTrapped {
     function foo(uint a) constant returns(string, uint) {
@@ -87,9 +91,10 @@ contract ContractTrapped {
         uint b = 5;
         return ('', b);
     }
-}```
+}
+```
 
-## f.value.sol
+### f.value.sol
 ```js
 contract One{
     string public word;
@@ -104,9 +109,10 @@ contract Two{
         One o = One(0x692a70d2e424a56d2c6c27aa97d1a86395877b3a);
         o.setMsg.value(0)("test");
     }
-}```
+}
+```
 
-## factory.sol
+### factory.sol
 ```js
 contract A {
     uint[] public amounts;
@@ -130,9 +136,10 @@ contract Factory {
         a.init(listOfData[msg.sender].amounts);
         return address(a);
     }
-}```
+}
+```
 
-## mapping-delete.sol
+### mapping-delete.sol
 ```js
 contract MyContract {
     struct Data {
@@ -146,9 +153,10 @@ contract MyContract {
         items[2] = Data(5,6);
         delete items[1];
     }
-}```
+}
+```
 
-## modifiers.sol
+### modifiers.sol
 ```js
 contract MyContract {
 
@@ -177,9 +185,10 @@ contract MyContract {
   function refund() lock {
       msg.sender.send(0);
   }
-}```
+}
+```
 
-## no-variable-length-returns.sol
+### no-variable-length-returns.sol
 ```js
 contract A {
   bytes8[] stuff;
@@ -205,9 +214,10 @@ contract B {
     // ERROR
     mystuff = a.get();
   }
-}```
+}
+```
 
-## public-length.sol
+### public-length.sol
 ```js
 contract A {
     uint[] public nums;
@@ -224,9 +234,10 @@ contract B {
         //return a.nums.length();
         return a.getNumLength();
     }
-}```
+}
+```
 
-## public-mapping.sol
+### public-mapping.sol
 ```js
 contract A {
     mapping(uint => uint) public objects;
@@ -244,9 +255,10 @@ contract B {
         return a.objects(0);
     }
 }
+
 ```
 
-## reentry-attack.sol
+### reentry-attack.sol
 ```js
 contract MiniDAO {
     mapping (address => uint) balances;
@@ -285,9 +297,10 @@ contract Attacker {
             dao.withdraw(amount);
         }
     }
-}```
+}
+```
 
-## remove-from-array.sol
+### remove-from-array.sol
 ```js
 contract Contract {
     uint[] public values;
@@ -329,9 +342,10 @@ contract Contract {
         removeByValue(30);
         return getValues();
     }
-}```
+}
+```
 
-## send-eth.sol
+### send-eth.sol
 ```js
 contract MyContract {
 
@@ -352,9 +366,10 @@ contract MyContract {
         // explicitly handle callee throw
         if(a.call.value(1 ether)()) throw;
     }
-}```
+}
+```
 
-## sha3.sol
+### sha3.sol
 ```js
 contract Sha3 {
     function hashArray() constant returns(bytes32) {
@@ -426,9 +441,10 @@ contract Sha3 {
     function hashString() constant returns (bytes32) {
         return sha3('a');
     }
-}```
+}
+```
 
-## tuple.sol
+### tuple.sol
 ```js
 contract A {
     function tuple() returns(uint, string) {
@@ -440,5 +456,6 @@ contract A {
         (a,) = Tuple();
         return a;
     }
-}```
+}
+```
 

@@ -14,7 +14,7 @@ function renderExamples(files) {
   return files.map(file => {
     const filename = path.basename(file)
     const src = fs.readFileSync(file, 'utf-8')
-    return `## ${filename}\n\`\`\`js\n${src}\`\`\`\n`
+    return `### ${filename}\n\`\`\`js\n${src}\n\`\`\`\n`
   }).join('\n')
 }
 
