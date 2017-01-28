@@ -10,11 +10,11 @@ const readmeTemplateFile = 'README-template.md'
 const readmeFile = 'README.md'
 const readmePlaceholder = '<%=links%>'
 
-function renderPaths(relativePaths) {
-  return relativePaths.map(relativePath => {
-    const filename = path.basename(relativePath)
-    const url = repoRoot + relativePath
-    return `- [${filename}](${url})`
+function renderExamples(files) {
+  return files.map(file => {
+    const filename = path.basename(file)
+    const src = fs.readFileSync(file, 'utf-8')
+    return `## ${filename}\n\`\`\`js\n${src}\`\`\`\n`
   }).join('\n')
 }
 
@@ -24,7 +24,7 @@ function renderReadme(content) {
 }
 
 globAsync('**/*.sol')
-  .then(renderPaths)
+  .then(renderExamples)
   .then(renderReadme)
   .then(fileContent => fs.writeFileSync(readmeFile, fileContent))
 
