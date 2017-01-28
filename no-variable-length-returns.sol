@@ -18,7 +18,7 @@ contract B {
     bytes8[] memory stuff = a.get();
   }
 
-  function CopyToStorage() {
+  function copyToStorage() {
     // ERROR
     mystuff = a.get();
   }

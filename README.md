@@ -7,7 +7,7 @@ This is a collection of Solidity snippets for people who like to learn by exampl
 contract ArrayDelete {
     uint[] numbers;
 
-    function Main() returns (uint[]) {
+    function main() returns (uint[]) {
         numbers.push(100);
         numbers.push(200);
         numbers.push(300);
@@ -52,7 +52,7 @@ contract A {
 }
 
 contract Manager {
-    function MakeA() returns (uint256) {
+    function makeA() returns (uint256) {
         uint256[] numbers;
         numbers.push(10);
 
@@ -71,15 +71,15 @@ contract MyContract {
   function MyContract(address otherAddress) {
     other = OtherContract(otherAddress);
   }
-  function Foo() {
-    other.Bar();
+  function foo() {
+    other.bar();
   }
 }```
 
 ## error-trap.sol
 ```js
 contract ContractTrapped {
-    function Foo(uint a) constant returns(string, uint) {
+    function foo(uint a) constant returns(string, uint) {
         uint nullReturn;
         if(a < 100) {
             return('Too small', nullReturn);
@@ -110,7 +110,7 @@ contract Two{
 ```js
 contract A {
     uint[] public amounts;
-    function Init(uint[] _amounts) {
+    function init(uint[] _amounts) {
         amounts = _amounts;
     }
 }
@@ -121,26 +121,26 @@ contract Factory {
     }
     mapping (address => AData) listOfData;
 
-    function Set(uint[] _amounts) {
+    function set(uint[] _amounts) {
         listOfData[msg.sender] = AData(_amounts);
     }
 
-    function Make() returns(address) {
+    function make() returns(address) {
         A a = new A();
-        a.Init(listOfData[msg.sender].amounts);
+        a.init(listOfData[msg.sender].amounts);
         return address(a);
     }
 }```
 
 ## mapping-delete.sol
 ```js
-contract Contract {
+contract MyContract {
     struct Data {
         uint a;
         uint b;
     }
     mapping (uint => Data) public items;
-    function Contract() {
+    function MyContract() {
         items[0] = Data(1,2);
         items[1] = Data(3,4);
         items[2] = Data(5,6);
@@ -150,7 +150,7 @@ contract Contract {
 
 ## modifiers.sol
 ```js
-contract Contract {
+contract MyContract {
 
   bool locked = false;
 
@@ -201,7 +201,7 @@ contract B {
     bytes8[] memory stuff = a.get();
   }
 
-  function CopyToStorage() {
+  function copyToStorage() {
     // ERROR
     mystuff = a.get();
   }
@@ -211,7 +211,7 @@ contract B {
 ```js
 contract A {
     uint[] public nums;
-    function GetNumLength() returns(uint) {
+    function getNumLength() returns(uint) {
         return nums.length;
     }
 }
@@ -219,10 +219,10 @@ contract A {
 contract B {
     A a;
 
-    function Test() constant returns (uint) {
+    function test() constant returns (uint) {
         // length is not accessible on public array from other contract
         //return a.nums.length();
-        return a.GetNumLength();
+        return a.getNumLength();
     }
 }```
 
@@ -240,7 +240,7 @@ contract B {
     // insert address of deployed First here
     A a = A(0x692a70d2e424a56d2c6c27aa97d1a86395877b3a);
 
-    function Get() returns(uint) {
+    function get() returns(uint) {
         return a.objects(0);
     }
 }
@@ -251,11 +251,11 @@ contract B {
 contract MiniDAO {
     mapping (address => uint) balances;
 
-    function Deposit() {
+    function deposit() {
         balances[msg.sender] += msg.value;
     }
 
-    function Withdraw(uint amount) {
+    function withdraw(uint amount) {
         if(balances[msg.sender] < amount) throw;
         msg.sender.call.value(amount)();
         balances[msg.sender] -= amount;
@@ -273,16 +273,16 @@ contract Attacker {
     function Attacker(address daoAddress) {
         dao = MiniDAO(daoAddress);
         amount = msg.value;
-        dao.Deposit.value(msg.value)();
+        dao.deposit.value(msg.value)();
     }
 
-    function Attack() {
-        dao.Withdraw(amount);
+    function attack() {
+        dao.withdraw(amount);
     }
 
     function() {
         if(stack++ < 10) {
-            dao.Withdraw(amount);
+            dao.withdraw(amount);
         }
     }
 }```
@@ -295,7 +295,7 @@ contract Contract {
     function Contract() {
     }
 
-    function Find(uint value) returns(uint) {
+    function find(uint value) returns(uint) {
         uint i = 0;
         while (values[i] != value) {
             i++;
@@ -303,12 +303,12 @@ contract Contract {
         return i;
     }
 
-    function RemoveByValue(uint value) {
-        uint i = Find(value);
-        RemoveByIndex(i);
+    function removeByValue(uint value) {
+        uint i = find(value);
+        removeByIndex(i);
     }
 
-    function RemoveByIndex(uint i) {
+    function removeByIndex(uint i) {
         while (i<values.length-1) {
             values[i] = values[i+1];
             i++;
@@ -316,18 +316,18 @@ contract Contract {
         values.length--;
     }
 
-    function GetValues() constant returns(uint[]) {
+    function getValues() constant returns(uint[]) {
         return values;
     }
 
-    function Test() returns(uint[]) {
+    function test() returns(uint[]) {
         values.push(10);
         values.push(20);
         values.push(30);
         values.push(40);
         values.push(50);
-        RemoveByValue(30);
-        return GetValues();
+        removeByValue(30);
+        return getValues();
     }
 }```
 
@@ -357,7 +357,7 @@ contract MyContract {
 ## sha3.sol
 ```js
 contract Sha3 {
-    function HashArray() constant returns(bytes32) {
+    function hashArray() constant returns(bytes32) {
         bytes8[] memory tickers = new bytes8[](4);
         tickers[0] = bytes8('BTC');
         tickers[1] = bytes8('ETH');
@@ -367,7 +367,7 @@ contract Sha3 {
         // 0x374c0504f79c1d5e6e4ded17d488802b5656bd1d96b16a568d6c324e1c04c37b
     }
 
-    function HashPackedArray() constant returns(bytes32) {
+    function hashPackedArray() constant returns(bytes32) {
         bytes8 btc = bytes8('BTC');
         bytes8 eth = bytes8('ETH');
         bytes8 ltc = bytes8('LTC');
@@ -376,54 +376,54 @@ contract Sha3 {
         // 0xe79a6745d2205095147fd735f329de58377b2f0b9f4b81ae23e010062127f2bc
     }
 
-    function HashAddress() constant returns(bytes32) {
+    function hashAddress() constant returns(bytes32) {
         address account = 0x6779913e982688474f710b47e1c0506c5dca4634;
         return sha3(bytes20(account));
         // 0x229327de236bd04ccac2efc445f1a2b63afddf438b35874b9f6fd1e6c38b0198
     }
 
-    function TestPackedArgs() constant returns (bool) {
+    function testPackedArgs() constant returns (bool) {
         return sha3('ab') == sha3('a', 'b');
     }
 
-    function HashHex() constant returns (bytes32) {
+    function hashHex() constant returns (bytes32) {
         return sha3(0x0a);
         // 0x0ef9d8f8804d174666011a394cab7901679a8944d24249fd148a6a36071151f8
     }
 
-    function HashInt() constant returns (bytes32) {
+    function hashInt() constant returns (bytes32) {
         return sha3(int(1));
     }
 
-    function HashNegative() constant returns (bytes32) {
+    function hashNegative() constant returns (bytes32) {
         return sha3(int(-1));
     }
 
-    function Hash8() constant returns (bytes32) {
+    function hash8() constant returns (bytes32) {
         return sha3(1);
     }
 
-    function Hash32() constant returns (bytes32) {
+    function hash32() constant returns (bytes32) {
         return sha3(uint32(1));
     }
 
-    function Hash256() constant returns (bytes32) {
+    function hash256() constant returns (bytes32) {
         return sha3(uint(1));
     }
 
-    function HashEth() constant returns (bytes32) {
+    function hashEth() constant returns (bytes32) {
         return sha3(uint(100 ether));
     }
 
-    function HashWei() constant returns (bytes32) {
+    function hashWei() constant returns (bytes32) {
         return sha3(uint(100));
     }
 
-    function HashMultipleArgs() constant returns (bytes32) {
+    function hashMultipleArgs() constant returns (bytes32) {
         return sha3('a', uint(1));
     }
 
-    function HashString() constant returns (bytes32) {
+    function hashString() constant returns (bytes32) {
         return sha3('a');
     }
 }```
@@ -431,11 +431,11 @@ contract Sha3 {
 ## tuple.sol
 ```js
 contract A {
-    function Tuple() returns(uint, string) {
+    function tuple() returns(uint, string) {
         return (1, "Hi");
     }
 
-    function GetOne() returns(uint) {
+    function getOne() returns(uint) {
         uint a;
         (a,) = Tuple();
         return a;

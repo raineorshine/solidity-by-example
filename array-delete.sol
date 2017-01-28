@@ -1,7 +1,7 @@
 contract ArrayDelete {
     uint[] numbers;
 
-    function Main() returns (uint[]) {
+    function main() returns (uint[]) {
         numbers.push(100);
         numbers.push(200);
         numbers.push(300);

@@ -3,39 +3,39 @@ contract Contract {
 
     function Contract() {
     }
-    
-    function Find(uint value) returns(uint) {
+
+    function find(uint value) returns(uint) {
         uint i = 0;
-        while (values[i] != value) { 
-            i++; 
+        while (values[i] != value) {
+            i++;
         }
         return i;
     }
-    
-    function RemoveByValue(uint value) {
-        uint i = Find(value);
-        RemoveByIndex(i);
+
+    function removeByValue(uint value) {
+        uint i = find(value);
+        removeByIndex(i);
     }
-    
-    function RemoveByIndex(uint i) {
+
+    function removeByIndex(uint i) {
         while (i<values.length-1) {
             values[i] = values[i+1];
             i++;
         }
         values.length--;
     }
-    
-    function GetValues() constant returns(uint[]) {
+
+    function getValues() constant returns(uint[]) {
         return values;
     }
-    
-    function Test() returns(uint[]) {
+
+    function test() returns(uint[]) {
         values.push(10);
         values.push(20);
         values.push(30);
         values.push(40);
         values.push(50);
-        RemoveByValue(30);
-        return GetValues();
+        removeByValue(30);
+        return getValues();
     }
 }

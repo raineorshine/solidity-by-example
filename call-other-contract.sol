@@ -5,7 +5,7 @@ contract MyContract {
   function MyContract(address otherAddress) {
     other = OtherContract(otherAddress);
   }
-  function Foo() {
-    other.Bar();
+  function foo() {
+    other.bar();
   }
 }

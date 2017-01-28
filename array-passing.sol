@@ -12,7 +12,7 @@ contract A {
 }
 
 contract Manager {
-    function MakeA() returns (uint256) {
+    function makeA() returns (uint256) {
         uint256[] numbers;
         numbers.push(10);
 

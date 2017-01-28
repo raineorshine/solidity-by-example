@@ -1,5 +1,5 @@
 contract ContractTrapped {
-    function Foo(uint a) constant returns(string, uint) {
+    function foo(uint a) constant returns(string, uint) {
         uint nullReturn;
         if(a < 100) {
             return('Too small', nullReturn);

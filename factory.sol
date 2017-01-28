@@ -1,6 +1,6 @@
 contract A {
     uint[] public amounts;
-    function Init(uint[] _amounts) {
+    function init(uint[] _amounts) {
         amounts = _amounts;
     }
 }
@@ -10,14 +10,14 @@ contract Factory {
         uint[] amounts;
     }
     mapping (address => AData) listOfData;
-    
-    function Set(uint[] _amounts) {
+
+    function set(uint[] _amounts) {
         listOfData[msg.sender] = AData(_amounts);
     }
-    
-    function Make() returns(address) {
+
+    function make() returns(address) {
         A a = new A();
-        a.Init(listOfData[msg.sender].amounts);
+        a.init(listOfData[msg.sender].amounts);
         return address(a);
     }
 }
