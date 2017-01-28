@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fs = require('fs')
 const path = require('path')
 const glob = require('glob')
@@ -22,7 +23,7 @@ function renderReadme(content) {
   return readmeTemplate.replace(readmePlaceholder, content)
 }
 
-globAsync('examples/*/*.sol')
+globAsync('**/*.sol')
   .then(renderPaths)
   .then(renderReadme)
   .then(fileContent => fs.writeFileSync(readmeFile, fileContent))

@@ -6,9 +6,6 @@
     "email": "raineorshine@gmail.com",
     "url": "https://github.com/raineorshine"
   },
-  "scripts": {
-    "build": "node build.js"
-  },
   "devDependencies": {
     "bluebird": "^3.4.1",
     "glob": "^7.0.5"
