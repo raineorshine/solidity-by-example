@@ -1,6 +1,9 @@
 {
   "name": "solidity-by-example",
   "private": true,
+  "scripts": {
+    "build": "node build.js"
+  },
   "author": {
     "name": "Raine Revere",
     "email": "raineorshine@gmail.com",
