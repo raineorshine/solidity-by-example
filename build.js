@@ -7,7 +7,7 @@ const globAsync = promisify(glob)
 const repoRoot = 'https://github.com/raineorshine/solidity-by-example/blob/master/'
 const readmeTemplateFile = 'README-template.md'
 const readmeFile = 'README.md'
-const readmePlaceholder = '<%=links%>'
+const readmePlaceholder = '<%=examples%>'
 
 function renderExamples(files) {
   return files.map(file => {

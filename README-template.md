@@ -2,4 +2,4 @@ This is a collection of Solidity snippets for people who like to learn by exampl
 
 ## Examples
 
-<%=links%>
+<%=examples%>
