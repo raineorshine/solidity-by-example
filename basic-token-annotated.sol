@@ -1,6 +1,6 @@
 // declare which version of Solidity we are using
 // different versions of Solidity have different
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.18;
 
 // define a smart contract called "BasicToken"
 contract BasicToken {
@@ -30,39 +30,39 @@ contract BasicToken {
 
   /**
   * @dev transfer token for a specified address
-  * @param _to The address to transfer to.
-  * @param _value The amount to be transferred.
+  * @param recipient The address to transfer to.
+  * @param value The amount to be transferred.
   */
   // define a function called "transfer"
-  // inputs? (parameters) an address called "_to" and a uint256 called "_value"
-  function transfer(address _to, uint256 _value) public {
+  // inputs? (parameters) an address called "recipient" and a uint256 called "value"
+  function transfer(address recipient, uint256 value) public {
     // msg.sender is a predefined variable that specifies the address of the
     // person sending this transaction
     // address msg.sender = 0x5ba...;
 
     // balances[msg.sender] -> set the balance of the sender
-    // set the balance of the sender to their current balance minus _value
+    // set the balance of the sender to their current balance minus value
     // withdrawing tokens from the sender's account
-    balances[msg.sender] = balances[msg.sender].sub(_value); // balance - _value
+    balances[msg.sender] -= value;
 
-    // balances[_to] -> set the balance of the receiver (_to)
-    // set the balance of the receiver to their current balance plus _value
+    // balances[recipient] -> set the balance of the receiver (recipient)
+    // set the balance of the receiver to their current balance plus value
     // depositing tokens into the receiver's account
-    balances[_to] = balances[_to].add(_value); // balance + _value
+    balances[recipient] += value;
   }
 
   /**
   * @dev Gets the balance of the specified address.
-  * @param _owner The address to query the the balance of.
+  * @param account The address to query the the balance of.
   * @return An uint256 representing the amount owned by the passed address.
   */
   // define function called "balanceOf"
-  // inputs? (parameters) the address of the owner (_owner)
+  // inputs? (parameters) the address of the owner (account)
   // ontputs? (returns) the balance (number)
-  function balanceOf(address _owner) public constant returns (uint256 balance) {
+  function balanceOf(address account) public constant returns (uint256) {
 
-    // balances[_owner] -> return the balance of the owner
-    return balances[_owner];
+    // balances[account] -> return the balance of the owner
+    return balances[account];
   }
 
 }
