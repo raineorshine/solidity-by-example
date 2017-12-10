@@ -4,7 +4,7 @@ contract MyContract {
 
     // naive recursion
     function sum(uint n) constant returns(uint) {
-        return n == 1 ? 1 :
+        return n == 0 ? 0 :
           n + sum(n-1);
     }
 
@@ -19,7 +19,7 @@ contract MyContract {
 
     // tail-recursion
     function sumtailHelper(uint n, uint acc) private constant returns(uint) {
-        return n == 1 ? acc :
+        return n == 0 ? acc :
           sumtailHelper(n-1, acc + n);
     }
     function sumtail(uint n) constant returns(uint) {
