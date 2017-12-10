@@ -16,9 +16,10 @@ contract Proposal {
     
     function approve(address approver) public {
         approvalMask |= bytes32(approver);
+        approvals[approver] = true;
     }
     
     function isApproved() public constant returns(bool) {
-        return approvalMask == approver1 | approver2;
+        return approvalMask == target;
     }
 }
