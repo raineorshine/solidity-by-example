@@ -5,7 +5,7 @@ contract A {
 
     function getOne() returns(uint) {
         uint a;
-        (a,) = Tuple();
+        (a,) = tuple();
         return a;
     }
 }
