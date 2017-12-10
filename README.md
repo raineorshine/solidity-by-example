@@ -542,9 +542,10 @@ contract MyContract {
         // RECOMMENDED
         // send all remaining gas
         // explicitly handle callee throw
-        if(a.call.value(1 ether)()) throw;
+        if(!a.call.value(1 ether)()) throw;
     }
 }
+
 ```
 
 ### sha3.sol
